@@ -1,0 +1,253 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.listing-details {
+  padding: 40px 130px 120px;
+  background: linear-gradient(180deg, $lightgrey, white);
+  border-radius: 20px;
+  animation: fadeIn 1s ease-in-out;
+
+  @include xl {
+    padding: 40px 80px 120px;
+  }
+
+  @include lg {
+    padding: 40px 50px 120px;
+  }
+
+  @include sm {
+    padding: 40px 20px 120px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.8s ease-in-out;
+    border-bottom: 2px solid $grey;
+    padding-bottom: 15px;
+
+    @include sm {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: $blue;
+      font-weight: bold;
+
+      @include sm {
+        font-size: 28px;
+      }
+    }
+
+    .save {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      background-color: $lightgrey;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: $pinkred;
+        color: white;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+      }
+    }
+  }
+
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+    animation: zoomIn 0.8s ease-in-out;
+
+    img {
+      max-width: 280px;
+      border-radius: 15px;
+      @include shadow;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 2px solid $grey;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      color: $blue;
+    }
+
+    .role {
+      font-size: 16px;
+      color: $darkgrey;
+    }
+  }
+
+  p {
+    max-width: 800px;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: $darkgrey;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .booking {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    animation: fadeInUp 0.8s ease-in-out;
+
+    @include lg {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .amenities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 80px;
+      row-gap: 30px;
+      margin: 30px 0;
+      max-width: 700px;
+
+      @include sm {
+        grid-column-gap: 20px;
+      }
+
+      .facility {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        animation: slideIn 0.8s ease-in-out;
+
+        &_icon {
+          font-size: 32px;
+          color: $pinkred;
+        }
+
+        p {
+          margin: 0;
+          color: $darkgrey;
+        }
+      }
+    }
+
+    .date-range-calendar {
+      background: $lightgrey;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease-in-out;
+
+      h2 {
+        margin-bottom: 10px;
+        color: $blue;
+        font-size: 22px;
+      }
+
+      .button {
+        @include buttonStyle;
+        width: 100%;
+        margin-top: 30px;
+        @include shadow;
+
+        &:hover {
+          background-color: darken($pinkred, 10%);
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @include lg {
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

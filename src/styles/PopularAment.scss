@@ -1,0 +1,96 @@
+.popular-ament {
+    padding: 40px 60px;
+    background-color: #f0f0f0;  // White background for the section
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding-bottom: 40px;  // Add padding to the bottom for spacing
+  
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      color: #003366;  // Navy blue for the title
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .ament-cards {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  
+    .ament-card {
+      width: 180px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: hsl(45, 92%, 48%);  // Mustard yellow (HSL color)
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+  
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+  
+      .ament-card-icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: #003366;  // Navy blue for icons
+      }
+  
+      .ament-card-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #003366;  // Navy blue for text
+      }
+    }
+  
+    // Custom styles for each type of amenity card
+    .ament-card.kitchen {
+      background-color: hsl(45, 92%, 48%);  // Mustard for Kitchen
+      .ament-card-icon {
+        color: #003366;  // Navy blue for the Kitchen icon
+      }
+    }
+  
+    .ament-card.wifi {
+      background-color: hsl(45, 92%, 48%);  // Mustard for Wifi
+      .ament-card-icon {
+        color: #003366;  // Navy blue for the Wifi icon
+      }
+    }
+  
+    .ament-card.pool {
+      background-color: hsl(45, 92%, 48%);  // Mustard for Pool
+      .ament-card-icon {
+        color: #003366;  // Navy blue for the Pool icon
+      }
+    }
+  
+    .ament-card.parking {
+      background-color: hsl(45, 92%, 48%);  // Mustard for Parking
+      .ament-card-icon {
+        color: #003366;  // Navy blue for the Parking icon
+      }
+    }
+  
+    .ament-card.ac {
+      background-color: hsl(45, 92%, 48%);  // Mustard for Air Conditioning
+      .ament-card-icon {
+        color: #003366;  // Navy blue for the AC icon
+      }
+    }
+  }
+
+ 

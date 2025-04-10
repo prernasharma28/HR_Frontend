@@ -23,7 +23,7 @@ const ListingDetails = () => {
   const getListingDetails = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/properties/${listingId}`,
+        `https://hr-server-00xc.onrender.com/properties/${listingId}`,
         {
           method: "GET",
         }
@@ -77,7 +77,7 @@ const ListingDetails = () => {
         totalPrice: listing.price * dayCount,
       };
 
-      const response = await fetch("http://localhost:3001/bookings/create", {
+      const response = await fetch("https://hr-server-00xc.onrender.com/bookings/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,7 +109,7 @@ const ListingDetails = () => {
           {listing.listingPhotoPaths?.map((item, index) => (
             <img
               key={index} // Add a unique key
-              src={`http://localhost:3001/${item.replace("public", "")}`}
+              src={`https://hr-server-00xc.onrender.com/${item.replace("public", "")}`}
               alt="listing photo"
               onError={(e) => {
                 e.target.onerror = null; // Prevent an infinite loop if fallback also fails
@@ -132,7 +132,7 @@ const ListingDetails = () => {
           {listing.creator ? (
             <>
               <img
-                src={`http://localhost:3001/${listing.creator?.profileImagePath?.replace("public", "")}`}
+                src={`hhttps://hr-server-00xc.onrender.com/${listing.creator?.profileImagePath?.replace("public", "")}`}
                 alt={`${listing.creator?.firstName}'s profile`}
                 onError={(e) => {
                   e.target.onerror = null; // Prevents infinite loop if fallback also fails
